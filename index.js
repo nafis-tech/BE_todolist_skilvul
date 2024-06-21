@@ -8,7 +8,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 
 app.get("/", (req, res) => {
-  res.send("Server sembada running");
+  res.send("Server todolist running");
 });
 const allowedOrigins = [
   "http://localhost:3000",
@@ -30,12 +30,10 @@ app.use(cors(corsOptions));
 
 // router
 const usersRouter = require("./src/router/user");
-const produkRouter = require("./src/router/produk");
 const todoList = require("./src/router/todo");
 
 // router path
 app.use("/users", usersRouter);
-app.use("/produk", produkRouter);
 
 app.use("/todo_list", todoList);
 
